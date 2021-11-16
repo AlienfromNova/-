@@ -162,8 +162,8 @@ void fraction_print(Fraction a){
 	fraction_simplify(a);
 	if(a->denominator == 1 || a->numerator == 0){
 		a->denominator = 1;
-		printf("%d",a->numerator);
-	}else printf("%d/%d",a->numerator,a->denominator); 
+		printf("%+-8d",a->numerator);
+	}else printf("%+d/%-8d",a->numerator,a->denominator); 
 	return;
 } 
 
@@ -265,7 +265,6 @@ void matrix_print(matrix a){
 	for(int i = 0;i < a.row;i++){
 		for(int j = 0;j < a.col;j++){
 			fraction_print(a.base[i][j]);
-			printf("\t");
 		}
 		printf("\n");
 	}
